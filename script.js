@@ -95,6 +95,7 @@ class ImageGame {
             Math.floor(Math.random() * this.images.length) : 
             this.currentIndex;
 
+        this.currentIndex = index;
         this.currentImage.src = this.images[index].url;
         this.answerInput.value = '';
         this.hintText.textContent = '';
@@ -125,9 +126,7 @@ class ImageGame {
     }
 
     getCurrentImageName() {
-        const index = this.isRandom ? 
-            Math.floor(Math.random() * this.images.length) : 
-            this.currentIndex;
+        const index = this.currentIndex;
         return this.images[index].name;
     }
 
