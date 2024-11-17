@@ -91,11 +91,7 @@ class ImageGame {
     showCurrentImage() {
         if (this.images.length === 0) return;
 
-        const index = this.isRandom ? 
-            Math.floor(Math.random() * this.images.length) : 
-            this.currentIndex;
-
-        this.currentIndex = index;
+        const index = this.currentIndex;
         this.currentImage.src = this.images[index].url;
         this.answerInput.value = '';
         this.hintText.textContent = '';
