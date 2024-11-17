@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>看图识人</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="stats">
+            <div class="score">准确率: <span id="accuracy">0%</span></div>
+            <div class="mode-switch">
+                <label>
+                    <input type="radio" name="mode" value="sequential" checked> 顺序模式
+                </label>
+                <label>
+                    <input type="radio" name="mode" value="random"> 随机模式
+                </label>
+            </div>
+            <label class="auto-next">
+                <input type="checkbox" id="autoNext"> 自动下一题
+            </label>
+        </div>
+
+        <div class="main-content">
+            <div class="upload-section" id="uploadSection">
+                <input type="file" id="folderInput" webkitdirectory directory multiple>
+                <label for="folderInput">选择图片文件夹</label>
+            </div>
+
+            <div class="game-section" id="gameSection" style="display: none;">
+                <div class="image-container">
+                    <img id="currentImage" src="" alt="待识别图片">
+                </div>
+                <div class="input-section">
+                    <input type="text" id="answer" placeholder="请输入人物名字">
+                    <button id="submit">提交</button>
+                    <button id="hint">提示</button>
+                    <button id="next">下一个</button>
+                </div>
+                <div id="hintText" class="hint-text"></div>
+                <div id="result" class="result"></div>
+            </div>
+        </div>
+
+        <div class="statistics">
+            <div>总题数: <span id="totalQuestions">0</span></div>
+            <div>正确: <span id="correctAnswers">0</span></div>
+            <div>使用提示次数: <span id="hintCount">0</span></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
